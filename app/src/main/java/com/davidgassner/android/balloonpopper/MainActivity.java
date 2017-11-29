@@ -140,6 +140,26 @@ public class MainActivity extends AppCompatActivity
         super.onBackPressed();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+       //MUSIC/SOUND
+        if (mSoundHelper != null) {
+            mSoundHelper.playMusic();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+       // MUSIC/SOUND
+        if (mSoundHelper != null) {
+            mSoundHelper.stopMusic();
+        }
+    }
+
     private void setToFullScreen() {
 
         //      Set full screen mode
