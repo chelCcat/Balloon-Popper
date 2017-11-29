@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity
 
 //          Manage high score locally
             if (PreferencesHelper.isTopScore(this, mScore)) {
-                String message = String.format(getString(R.string.your_top_score_is), mScore);
+                String message = String.format(getString(R.string.your_top_score_is), mScore + "\n" + getString(R.string.credits));
                 PreferencesHelper.setTopScore(this, mScore);
                 MyAlertDialog dialog = MyAlertDialog.newInstance(
                         getString(R.string.new_top_score),
