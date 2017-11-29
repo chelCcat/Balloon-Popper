@@ -21,6 +21,7 @@ public class Balloon extends ImageView
     private BalloonListener mListener;
     private ValueAnimator mAnimator;
     private boolean mPopped;
+    private int color = 0;
 
     public Balloon(Context context) {
         super(context);
@@ -33,6 +34,7 @@ public class Balloon extends ImageView
 
         this.setImageResource(R.drawable.balloon);
         this.setColorFilter(color);
+        this.color = color;
 
         int rawWidth = rawHeight / 2;
 
@@ -44,6 +46,10 @@ public class Balloon extends ImageView
         setLayoutParams(params);
 
         setOnTouchListener(this);
+    }
+
+    public int getColor() {
+        return color;
     }
 
     public void releaseBalloon(int screenHeight, int duration) {
