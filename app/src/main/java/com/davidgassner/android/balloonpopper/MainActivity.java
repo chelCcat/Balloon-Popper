@@ -1,11 +1,11 @@
 package com.davidgassner.android.balloonpopper;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
 
     private static final int BALLOONS_PER_LEVEL = 10;
-    private static final int NUMBER_OF_PINS = 5;
+    private static final int NUMBER_OF_PINS = 3;
 
     private static final int MIN_ANIMATION_DELAY = 500;
     private static final int MAX_ANIMATION_DELAY = 1500;
@@ -97,8 +97,6 @@ public class MainActivity extends AppCompatActivity
         mPinImages.add((ImageView) findViewById(R.id.pushpin1));
         mPinImages.add((ImageView) findViewById(R.id.pushpin2));
         mPinImages.add((ImageView) findViewById(R.id.pushpin3));
-        mPinImages.add((ImageView) findViewById(R.id.pushpin4));
-        mPinImages.add((ImageView) findViewById(R.id.pushpin5));
         mScoreDisplay = (TextView) findViewById(R.id.score_display);
         mLevelDisplay = (TextView) findViewById(R.id.level_display);
 
