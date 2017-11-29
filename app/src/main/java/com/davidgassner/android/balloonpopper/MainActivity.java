@@ -1,7 +1,8 @@
 package com.davidgassner.android.balloonpopper;
 
+import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -104,9 +105,9 @@ public class MainActivity extends AppCompatActivity
         updateDisplay();
 
 //      Initialize balloon colors: red, white and blue
-        mBalloonColors[0] = Color.argb(255, 255, 0, 0);
-        mBalloonColors[1] = Color.argb(255, 0, 255, 0);
-        mBalloonColors[2] = Color.argb(255, 0, 0, 255);
+        mBalloonColors[0] = Color.argb(255, 0, 112, 74);
+        mBalloonColors[1] = Color.argb(255, 165, 172, 176);
+        mBalloonColors[2] = Color.argb(255, 0, 112, 74);
 
 //      Get button references
         mGoButton = (Button) findViewById(R.id.go_button);
