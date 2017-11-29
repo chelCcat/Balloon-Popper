@@ -1,8 +1,6 @@
 package com.davidgassner.android.balloonpopper;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setBackgroundDrawableResource(R.drawable.modern_background);
+        getWindow().setBackgroundDrawableResource(R.drawable.modern_background_sepia);
 
 //      Load the activity layout, which is an empty canvas
         setContentView(R.layout.activity_main);
@@ -143,7 +141,7 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
 
-       //MUSIC/SOUND
+        //MUSIC/SOUND
         if (mSoundHelper != null) {
             mSoundHelper.playMusic();
         }
@@ -153,7 +151,7 @@ public class MainActivity extends AppCompatActivity
     protected void onPause() {
         super.onPause();
 
-       // MUSIC/SOUND
+        // MUSIC/SOUND
         if (mSoundHelper != null) {
             mSoundHelper.stopMusic();
         }
@@ -202,6 +200,8 @@ public class MainActivity extends AppCompatActivity
 
     private void startLevel() {
 
+        getWindow().setBackgroundDrawableResource(R.drawable.modern_background);
+
 //      Display the current level and score
         updateDisplay();
         mGoButton.setText(R.string.stop_game);
@@ -217,6 +217,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void finishLevel() {
+        getWindow().setBackgroundDrawableResource(R.drawable.modern_background_sepia);
         PreferencesHelper.setCurrentScore(this, mScore);
         PreferencesHelper.setCurrentLevel(this, mLevel);
         Toast.makeText(MainActivity.this,
@@ -327,6 +328,8 @@ public class MainActivity extends AppCompatActivity
         mGoButton.setText(R.string.play_game);
         mNextAction = ACTION_RESTART_GAME;
 
+        getWindow().setBackgroundDrawableResource(R.drawable.modern_background_sepia);
+
         if (allPinsUsed) {
 
 //          Manage high score locally
@@ -404,4 +407,3 @@ public class MainActivity extends AppCompatActivity
 
     }
 }
-
