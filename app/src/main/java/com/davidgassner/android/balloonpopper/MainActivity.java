@@ -215,11 +215,19 @@ public class MainActivity extends AppCompatActivity
         mLevelDisplay.setText(String.valueOf(mLevel));
     }
 
+    private int getGaussian(int min, int max)
+    {
+        Random r = new Random();
+        double rand =  r.nextGaussian();
+        double range =  min - max;
+        return (int) Math.round(rand * range) + min;
+    }
+
     private void launchBalloon(int x) {
 
 //      Balloon is launched from activity upon progress update from the AsyncTask
 //      Create new imageview and set its tint color
-        Balloon balloon = new Balloon(this, mBalloonColors[mNextColor], 150, mLevel);
+        Balloon balloon = new Balloon(this, mBalloonColors[mNextColor], getGaussian(110, 160), mLevel);
         mBalloons.add(balloon);
 
 //      Reset color for next balloon
