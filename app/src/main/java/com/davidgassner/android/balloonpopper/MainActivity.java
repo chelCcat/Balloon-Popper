@@ -1,9 +1,11 @@
 package com.davidgassner.android.balloonpopper;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -273,6 +275,11 @@ public class MainActivity extends AppCompatActivity
 
 //      Play sound, make balloon go away
         mSoundHelper.playSound(balloon);
+
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        v.vibrate(300);
+
         mContentView.removeView(balloon);
         mBalloons.remove(balloon);
         mBalloonsPopped++;
